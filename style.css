@@ -1,5 +1,97 @@
+@import url("https://fonts.googleapis.com/css2?family=Anek+Telugu:wght@300&display=swap");
+
+:root {
+  --primary-color: #65a30d;
+  --dark-gray: #737373;
+  --off-white: #e5e5e5;
+}
+
+body {
+  font-family: "Anek Telugu", sans-serif;
+  margin: 0px;
+  background-color: var(--dark-gray);
+  color: white;
+}
+
+#check-button {
+  background-color: var(--primary-color);
+  border-radius: 0.5rem;
+  color: white;
+  display: block;
+  max-width: 140px;
+  margin: 1rem 1rem 1rem 0rem;
+}
+
+#cash-given {
+  width: 10%;
+
+  color: var(--primary-color);
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+#bill-amount {
+  width: 10%;
+
+  color: var(--primary-color);
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 20px;
+}
+
 .container {
   display: flex;
   flex-direction: column;
-  width: 50vh;
+
+  align-items: center;
+}
+
+.notes {
+  padding-right: 40px;
+  font-size: 20px;
+}
+
+#check-button {
+  margin-top: 5vh;
+  margin-bottom: 10vh;
+  font-size: 20px;
+}
+
+#bill-amount {
+  margin-bottom: 2vh;
+}
+
+#noofnotess {
+  padding-right: 20px;
+  font-size: 20px;
+}
+
+#Notes {
+  font-size: 20px;
+}
+
+.no-of-notes {
+  background-color: white;
+  font-weight: bold;
+  color: #242b2e;
+}
+
+table {
+  width: 50%;
+  table-layout: fixed;
+  font-size: large;
+  text-align: center;
+}
+
+.heading {
+  background-color: var(--primary-color);
+  color: white;
+  border-radius: 0.5rem;
 }

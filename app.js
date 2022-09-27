@@ -1,30 +1,32 @@
-const btn = document.querySelector("#btn");
-const billAmount = document.querySelector("#bill-amt");
-const cashGiven = document.querySelector("#cashGiven");
-const message = document.querySelector("#error-msg");
-const numberOfNotes = document.querySelectorAll(".No-of-notes");
+const billAmount = document.querySelector("#bill-amount");
+const cashGiven = document.querySelector("#cash-given");
+const checkButton = document.querySelector("#check-button");
+const message = document.querySelector("#error-message");
+const noOfNotes = document.querySelectorAll(".no-of-notes");
 
 const availableNotes = [2000, 500, 100, 20, 10, 5, 1];
 
-btn.addEventListener("click", function validateBillAndCash() {
+checkButton.addEventListener("click", function validateBillAndCashAmount() {
   hideMessage();
-  if (billAmount.value > 0) {
-    if (cashGiven.value > billAmount.value) {
+  if (Number(billAmount.value) > 0) {
+    if (Number(cashGiven.value) >= Number(billAmount.value)) {
       const amountToBeReturned = cashGiven.value - billAmount.value;
-      calChange(amountToBeReturned);
+      calculateChange(amountToBeReturned);
     } else {
-      showMessage("The cash provided is insufficient");
+      showMessage(
+        "Cash is less than Bill Amount, Please give full Bill Amount!!!"
+      );
     }
   } else {
-    showMessage("Invalid bill amount");
+    showMessage("Invalid Bill Amount!");
   }
 });
 
-function calChange(amountToBeReturned) {
-  for (let i = 0; i < availableNotes.length; i++) {
-    const numOfNotes = Math.trunc(amountToBeReturned / availableNotes[i]);
-    amountToBeReturned %= availableNotes[i];
-    numberOfNotes[i].innerText = numOfNotes;
+function calculateChange(amountToBeReturned) {
+  for (i = 0; i < availableNotes.length; i++) {
+    const numberOfNotes = Math.trunc(amountToBeReturned / availableNotes[i]);
+    amountToBeReturned = amountToBeReturned % availableNotes[i];
+    noOfNotes[i].innerText = numberOfNotes;
   }
 }
 
